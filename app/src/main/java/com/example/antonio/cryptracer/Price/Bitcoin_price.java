@@ -31,7 +31,7 @@ public class Bitcoin_price extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bitcoin_analytics);
+        setContentView(R.layout.activity_bitcoin_price);
         txt = (TextView) findViewById(R.id.txt);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("BPI Loading");

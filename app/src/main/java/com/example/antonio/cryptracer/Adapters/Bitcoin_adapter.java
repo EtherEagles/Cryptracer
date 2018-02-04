@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.antonio.cryptracer.Charts.Bitcoin_Chart;
 import com.example.antonio.cryptracer.Price.Bitcoin_price;
 import com.example.antonio.cryptracer.Didactic_units.Bitcoin_didactic;
 import com.example.antonio.cryptracer.Models.Model;
@@ -49,12 +50,15 @@ public class Bitcoin_adapter extends RecyclerView.Adapter<Bitcoin_adapter.Bitcoi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             Intent bitcoin_didactic = new Intent(context, Bitcoin_didactic.class);
             Intent bitcoin_analytics = new Intent(context, Bitcoin_price.class);
+            Intent bitcoin_chart = new Intent(context, Bitcoin_Chart.class);
             @Override
             public void onClick(View view) {
                 if(listModels.get(position).getHead() == "What is Bitcoin?"){
                     context.startActivity(bitcoin_didactic);
                 } if(listModels.get(position).getHead() == "Bitcoin price"){
                     context.startActivity(bitcoin_analytics);
+                } if(listModels.get(position).getHead() == "Bitcoin chart") {
+                    context.startActivity(bitcoin_chart);
                 }
             }
         });

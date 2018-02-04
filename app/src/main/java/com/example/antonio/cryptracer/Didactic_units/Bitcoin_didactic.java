@@ -12,5 +12,4 @@ public class Bitcoin_didactic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitcoin_didactic);
     }
-
 }

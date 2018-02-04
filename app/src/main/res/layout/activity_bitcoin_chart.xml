@@ -5,5 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.antonio.cryptracer.Charts.Bitcoin_Chart">
-
+    <com.github.mikephil.charting.charts.CandleStickChart
+        android:id="@+id/chart"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    </com.github.mikephil.charting.charts.CandleStickChart>
 </android.support.constraint.ConstraintLayout>
+

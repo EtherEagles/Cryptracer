@@ -29,8 +29,8 @@ public class Bitcoin extends AppCompatActivity {
         bitcoinView.setLayoutManager(new LinearLayoutManager(this));
 
         listModels = new ArrayList<>();
-        String[] bitcoin_options = {"What is Bitcoin?", "Bitcoin price", "Bitcoin chart"};
-        String[] bitcoin_descriptions = {"Get a taste of the most valuable cryptocurrency", "See current price for bitcoin", "Chart example"};
+        String[] bitcoin_options = {"What is Bitcoin?", "Bitcoin current price", "Bitcoin last year chart", "Bitcoin last day chart", "Bitcoin last hour chart"};
+        String[] bitcoin_descriptions = {"Get a taste of the most valuable cryptocurrency", "See current price for bitcoin", "Daily fluctuations for the last year", "Hourly fluctuations for the last day", "Fluctuations from every minute during the last hour"};
 
         for(int i = 0; i < bitcoin_options.length; i++){
             Model model;

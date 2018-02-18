@@ -33,7 +33,8 @@
         <activity android:name=".Price.Bitcoin_price" />
         <activity android:name=".Charts.Bitcoin_Chart_Day" />
         <activity android:name=".Charts.Bitcoin_Chart_Hour" />
-        <activity android:name=".Charts.Bitcoin_Chart_Minute"></activity>
+        <activity android:name=".Charts.Bitcoin_Chart_Minute" />
+        <activity android:name=".Charts.Storjcoin_Chart_Day"></activity>
     </application>
 
 </manifest>

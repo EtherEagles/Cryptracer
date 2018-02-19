@@ -76,7 +76,7 @@ public class Storjcoin_Chart_Day extends AppCompatActivity {
                 float close = (float) stickData.getDouble("close");
                 entries.add(new CandleEntry(i+1, high, low, open, close));
             }
-            CandleDataSet dataset = new CandleDataSet(entries, "Values");
+            CandleDataSet dataset = new CandleDataSet(entries, "Daily fluctuations for the last 365 days");
             dataset.setColor(Color.rgb(80, 80, 80));
             dataset.setShadowColor(Color.DKGRAY);
             dataset.setShadowWidth(1f);
@@ -86,7 +86,7 @@ public class Storjcoin_Chart_Day extends AppCompatActivity {
             dataset.setIncreasingPaintStyle(Paint.Style.FILL);
             dataset.setNeutralColor(Color.GREEN);
             CandleData data2 = new CandleData(dataset);
-            candleStickChart.getDescription().setText("Storjcoin - Last 365 Days");
+            candleStickChart.getDescription().setText("Storjcoin");
             candleStickChart.animateY(5000);
             candleStickChart.animateX(5000);
             candleStickChart.setData(data2);

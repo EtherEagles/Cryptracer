@@ -16,7 +16,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
 
 import okhttp3.Call;
@@ -33,7 +32,7 @@ public class Storjcoin_Chart_Day extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_storjcoin__chart__day);
+        setContentView(R.layout.activity_storjcoin_chart_day);
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()

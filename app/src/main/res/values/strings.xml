@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cryptracer</string>
+    <string name="load_button">Load</string>
 </resources>

@@ -55,6 +55,9 @@ public class Currency_selection extends AppCompatActivity {
         mImageUrls.add("https://pbs.twimg.com/profile_images/835199495013019648/cNeEcEDW.jpg");
         mNames.add("Storjcoin");
 
+        mImageUrls.add("https://pbs.twimg.com/profile_images/835199495013019648/cNeEcEDW.jpg");
+        mNames.add("Multichart");
+
         initRecyclerView();
 
     }

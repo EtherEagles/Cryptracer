@@ -36,7 +36,10 @@
         <activity android:name=".Charts.Bitcoin_Chart_Minute" />
         <activity android:name=".Charts.Storjcoin_Chart_Day" />
         <activity android:name=".Charts.Multichart" />
-        <activity android:name=".Currencies.MultichartSelection"></activity>
+        <activity android:name=".Currencies.MultichartSelection" />
+        <activity android:name=".Charts.StorjcoinChart" />
+        <activity android:name=".Didactic_units.StorjcoinDidactic" />
+        <activity android:name=".Price.StorjcoinPrice" />
     </application>
 
 </manifest>

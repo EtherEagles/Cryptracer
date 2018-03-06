@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antonio.cryptracer.Charts.Storjcoin_Chart_Day">
+    tools:context="com.example.antonio.cryptracer.Charts.StorjcoinChart">
     <com.github.mikephil.charting.charts.CandleStickChart
         android:id="@+id/chart"
         android:layout_height="match_parent"

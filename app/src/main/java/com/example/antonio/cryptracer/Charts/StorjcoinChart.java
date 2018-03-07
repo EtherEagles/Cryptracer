@@ -68,7 +68,7 @@ public class StorjcoinChart extends AppCompatActivity {
         });
     }
 
-    private void buildChart(String data) {
+    public void buildChart(String data) {
         try {
             ArrayList<CandleEntry> entries = new ArrayList<>();
             candleStickChart = findViewById(R.id.chart);

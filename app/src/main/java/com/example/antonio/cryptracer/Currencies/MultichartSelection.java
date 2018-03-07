@@ -70,9 +70,14 @@ public class MultichartSelection extends AppCompatActivity {
     }
 
     public void loadMulti(View view){
+
         if(selected.size()>0) {
+            Bundle periodExtra = getIntent().getExtras();
+            String period = periodExtra.getString("loadPeriod");
+
             Intent intent = new Intent(this, Multichart.class);
             intent.putStringArrayListExtra("loadSelection", selected);
+            intent.putExtra("loadPeriod", period);
             startActivity(intent);
         } else{
             Toast.makeText(MultichartSelection.this, "Select a currency!", Toast.LENGTH_SHORT).show();

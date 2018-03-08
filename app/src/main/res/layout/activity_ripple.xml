@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.antonio.cryptracer.Currencies.Ripple">
 
+    <ListView
+        android:id="@+id/rippleList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
 </android.support.constraint.ConstraintLayout>

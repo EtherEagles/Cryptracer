@@ -35,7 +35,7 @@ public class MultichartSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multichart_selection);
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, coinList);
-        final ListView lv = findViewById(R.id.list);
+        final ListView lv = findViewById(R.id.multiSelList);
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         lv.setAdapter(adapter);
 

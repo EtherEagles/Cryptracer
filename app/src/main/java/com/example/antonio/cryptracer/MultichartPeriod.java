@@ -26,11 +26,11 @@ public class MultichartPeriod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multichart_period);
 
-        TextView textView = findViewById(R.id.txt);
+        TextView textView = findViewById(R.id.multiTxt);
         textView.setText("Select Time Period");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, optionList);
-        final ListView lv = findViewById(R.id.list);
+        final ListView lv = findViewById(R.id.multiList);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

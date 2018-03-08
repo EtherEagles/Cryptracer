@@ -4,10 +4,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.example.antonio.cryptracer.Currencies.MultichartSelection;
 import com.example.antonio.cryptracer.R;
 import com.github.mikephil.charting.charts.CandleStickChart;
 import com.github.mikephil.charting.data.CandleData;
@@ -26,7 +24,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class StorjcoinChart extends AppCompatActivity {
+public class RippleChart extends AppCompatActivity {
 
     private CandleStickChart candleStickChart;
     private String period;
@@ -34,7 +32,7 @@ public class StorjcoinChart extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_storjcoin_chart);
+        setContentView(R.layout.activity_ripple_chart);
 
         Bundle extra = getIntent().getExtras();
         period = extra.getString("period");
@@ -49,7 +47,7 @@ public class StorjcoinChart extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Toast.makeText(StorjcoinChart.this, "Error Loading Data" +
+                Toast.makeText(RippleChart.this, "Error Loading Data" +
                         e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
@@ -71,7 +69,7 @@ public class StorjcoinChart extends AppCompatActivity {
     public void buildChart(String data) {
         try {
             ArrayList<CandleEntry> entries = new ArrayList<>();
-            candleStickChart = findViewById(R.id.storjcoinChart);
+            candleStickChart = findViewById(R.id.rippleChart);
 
             JSONObject jsonData = new JSONObject(data);
             JSONArray candleData = jsonData.getJSONArray("Data");
@@ -99,7 +97,7 @@ public class StorjcoinChart extends AppCompatActivity {
 
             CandleData data2 = new CandleData(dataset);
 
-            candleStickChart.getDescription().setText("Storjcoin");
+            candleStickChart.getDescription().setText("Ripple");
             candleStickChart.animateX(3000);
             //candleStickChart.animateY(3000);
             candleStickChart.setData(data2);
@@ -128,13 +126,13 @@ public class StorjcoinChart extends AppCompatActivity {
     public String getKey(String period){
 
         if(period.equals("year")) {
-            String key = "https://min-api.cryptocompare.com/data/histoday?fsym=SJCX&tsym=USD&limit=364&aggregate=3&e=CCCAGG";
+            String key = "https://min-api.cryptocompare.com/data/histoday?fsym=XRP&tsym=USD&limit=364&aggregate=3&e=CCCAGG";
             return key;
         } else if(period.equals("day")) {
-            String key = "https://min-api.cryptocompare.com/data/histohour?fsym=SJCX&tsym=USD&limit=24&aggregate=3&e=CCCAGG";
+            String key = "https://min-api.cryptocompare.com/data/histohour?fsym=XRP&tsym=USD&limit=24&aggregate=3&e=CCCAGG";
             return key;
         } else if(period.equals("hour")) {
-            String key = "https://min-api.cryptocompare.com/data/histominute?fsym=SJCX&tsym=USD&limit=60&aggregate=3&e=CCCAGG";
+            String key = "https://min-api.cryptocompare.com/data/histominute?fsym=XRP&tsym=USD&limit=60&aggregate=3&e=CCCAGG";
             return key;
         } else {
             return null;

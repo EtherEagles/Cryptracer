@@ -40,7 +40,10 @@
         <activity android:name=".Charts.StorjcoinChart" />
         <activity android:name=".Didactic_units.StorjcoinDidactic" />
         <activity android:name=".Price.StorjcoinPrice" />
-        <activity android:name=".MultichartPeriod"></activity>
+        <activity android:name=".MultichartPeriod" />
+        <activity android:name=".Charts.RippleChart" />
+        <activity android:name=".Didactic_units.RippleDidactic" />
+        <activity android:name=".Price.RipplePrice"></activity>
     </application>
 
 </manifest>

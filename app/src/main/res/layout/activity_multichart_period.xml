@@ -7,7 +7,7 @@
     tools:context="com.example.antonio.cryptracer.MultichartPeriod">
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/multiTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -17,10 +17,10 @@
         android:gravity="center_horizontal"/>
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/multiList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/txt"
+        android:layout_below="@id/multiTxt"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

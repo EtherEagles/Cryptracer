@@ -7,7 +7,7 @@
     tools:context="com.example.antonio.cryptracer.Currencies.MultichartSelection">
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/multiSelList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/button2"
@@ -18,7 +18,7 @@
     </ListView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/multiSelButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

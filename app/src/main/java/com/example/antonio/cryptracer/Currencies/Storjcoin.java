@@ -23,7 +23,7 @@ public class Storjcoin extends AppCompatActivity {
         setContentView(R.layout.activity_storjcoin);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, chartOptions);
-        final ListView lv = findViewById(R.id.list);
+        final ListView lv = findViewById(R.id.storjcoinList);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

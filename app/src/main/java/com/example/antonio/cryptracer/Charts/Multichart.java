@@ -87,13 +87,16 @@ public class Multichart extends AppCompatActivity {
                                 }
                                 LineDataSet tempSet = new LineDataSet(entries, tagName);
                                 tempSet.setDrawCircles(false);
-
                                 tempSet.setColor(colorList[iName]);
                                 lineDataSets.add(tempSet);
                                 String description = getDescription(period);
                                 lineChart.getDescription().setText(description);
-                                lineChart.animateY(5000);
-                                lineChart.animateX(5000);
+                                if(lineData.length() > 20) {
+                                    //lineChart.animateY(3000);
+                                    lineChart.animateX(3000);
+                                } else {
+                                    lineChart.animateX(2000);
+                                }
                                 lineChart.setData(new LineData(lineDataSets));
                                 lineChart.invalidate();
                             } catch (Exception e) {

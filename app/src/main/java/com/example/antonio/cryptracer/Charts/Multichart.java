@@ -92,7 +92,6 @@ public class Multichart extends AppCompatActivity {
                                 String description = getDescription(period);
                                 lineChart.getDescription().setText(description);
                                 if(lineData.length() > 20) {
-                                    //lineChart.animateY(3000);
                                     lineChart.animateX(3000);
                                 } else {
                                     lineChart.animateX(2000);

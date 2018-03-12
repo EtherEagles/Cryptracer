@@ -89,6 +89,8 @@ public class Bitcoin_Chart_Day extends AppCompatActivity {
             cds.setValueTextColor(Color.BLACK);
             CandleData cd = new CandleData(cds);
             candleStickChart.setData(cd);
+            candleStickChart.animateY(5000);
+            candleStickChart.animateX(5000);
             candleStickChart.invalidate();
 
         } catch (Exception e){

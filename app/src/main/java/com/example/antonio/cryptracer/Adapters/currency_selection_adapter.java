@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.antonio.cryptracer.Currencies.MultichartSelection;
+import com.example.antonio.cryptracer.MultichartPeriod;
 import com.example.antonio.cryptracer.R;
 
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class currency_selection_adapter extends RecyclerView.Adapter<currency_se
                 Intent MaidSafeCoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.MaidSafeCoin.class);
                 Intent Lisk = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Lisk.class);
                 Intent Storjcoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Storjcoin.class);
-                Intent MultichartSelection =  new Intent(mContext, com.example.antonio.cryptracer.Currencies.MultichartSelection.class);
+                Intent Multichart =  new Intent(mContext, MultichartPeriod.class);
 
                 if(mcurrency_names.get(position) == "Bitcoin"){
                     mContext.startActivity(Bitcoin);
@@ -82,7 +82,7 @@ public class currency_selection_adapter extends RecyclerView.Adapter<currency_se
                 } if(mcurrency_names.get(position) == "Storjcoin"){
                     mContext.startActivity(Storjcoin);
                 } if(mcurrency_names.get(position) == "Multichart"){
-                    mContext.startActivity(MultichartSelection);
+                    mContext.startActivity(Multichart);
                 }
             }
         });

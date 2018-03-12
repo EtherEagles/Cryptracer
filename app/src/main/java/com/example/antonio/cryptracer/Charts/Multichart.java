@@ -3,6 +3,7 @@ package com.example.antonio.cryptracer.Charts;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import com.example.antonio.cryptracer.R;
 import com.github.mikephil.charting.charts.LineChart;
@@ -28,40 +29,36 @@ import okhttp3.Response;
 public class Multichart extends AppCompatActivity {
 
     LineChart lineChart;
-    public int[] colorList = {Color.argb(255, 0, 0, 255),
-            Color.argb(255, 255, 0, 0),
-            Color.argb(255, 0, 255, 0),
-            Color.argb(255, 145, 145, 145),
-            Color.argb(255, 255, 105, 4),
-            Color.argb(255, 1, 69, 4),
-            Color.argb(255, 1, 212, 70),
-            Color.argb(255, 1, 83, 136),
-            Color.argb(255, 0, 0, 0),
-            Color.argb(255, 91, 29, 53)};
+    public int[] colorList = {Color.BLUE, Color.RED, Color.BLACK, Color.GREEN, Color.GRAY};
+    public String[] keyStart = {"histoday", "histohour", "histominute"};
+    public String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multichart);
+
         Bundle extras = getIntent().getExtras();
         List<String> loadData = extras.getStringArrayList("loadSelection");
-        buildMulti(loadData);
+        String period = extras.getString("loadPeriod");
+        buildMulti(loadData, period);
     }
 
-    public void buildMulti(List<String> loadData) {
+    public void buildMulti(List<String> loadData, final String period) {
 
         final ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
 
         for (int i = 0; i < loadData.size(); i++) {
             final int iName = i;
             final String tagName = loadData.get(i);
-            String API_KEY = buildKey(tagName, 30);
+            String API_KEY = buildKey(tagName, period);
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
                     .url(API_KEY)
                     .build();
 
+            Log.e("tag", "h1");
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -86,16 +83,19 @@ public class Multichart extends AppCompatActivity {
                                 for (int x = 0; x < lineData.length(); x++) {
                                     JSONObject stickData = lineData.getJSONObject(x);
                                     float close = (float) stickData.getDouble("close");
-                                    entries.add(new Entry(x, close));
+                                    entries.add(new Entry(x+1, close));
                                 }
                                 LineDataSet tempSet = new LineDataSet(entries, tagName);
                                 tempSet.setDrawCircles(false);
-
                                 tempSet.setColor(colorList[iName]);
                                 lineDataSets.add(tempSet);
-                                lineChart.getDescription().setText(" ");
-                                lineChart.animateY(5000);
-                                lineChart.animateX(5000);
+                                String description = getDescription(period);
+                                lineChart.getDescription().setText(description);
+                                if(lineData.length() > 20) {
+                                    lineChart.animateX(3000);
+                                } else {
+                                    lineChart.animateX(2000);
+                                }
                                 lineChart.setData(new LineData(lineDataSets));
                                 lineChart.invalidate();
                             } catch (Exception e) {
@@ -108,9 +108,39 @@ public class Multichart extends AppCompatActivity {
         }
     }
 
-    public String buildKey(String tag, int time){
-        String key;
-        key = "https://min-api.cryptocompare.com/data/histoday?fsym="+tag+"&tsym=USD&limit="+String.valueOf(time)+"&aggregate=3&e=CCCAGG";
+    public String getDescription(String period){
+
+        String description = new String();
+
+        if(period.equals("Yearly")){
+            description = new String("Last 365 days");
+        } else if(period.equals("Monthly")){
+            description = new String("Last 30 days");
+        } else if(period.equals("Weekly")){
+            description = new String("Last 7 days");
+        } else if(period.equals("Daily")){
+            description = new String("Last 24 hours");
+        } else if(period.equals("Hourly")){
+            description = new String("Last 60 minutes");
+        }
+        return description;
+    }
+
+    public String buildKey(String tag, String period){
+        Log.e("tag", period);
+        if(period.equals("Yearly")){
+            Log.e("tag", "imhere");
+            key = "https://min-api.cryptocompare.com/data/"+keyStart[0]+"?fsym="+tag+"&tsym=USD&limit=364&aggregate=3&e=CCCAGG";
+        } else if(period.equals("Monthly")){
+            key = "https://min-api.cryptocompare.com/data/"+keyStart[0]+"?fsym="+tag+"&tsym=USD&limit=29&aggregate=3&e=CCCAGG";
+        } else if(period.equals("Weekly")){
+            key = "https://min-api.cryptocompare.com/data/"+keyStart[0]+"?fsym="+tag+"&tsym=USD&limit=6&aggregate=3&e=CCCAGG";
+        } else if(period.equals("Daily")){
+            key = "https://min-api.cryptocompare.com/data/"+keyStart[1]+"?fsym="+tag+"&tsym=USD&limit=23&aggregate=3&e=CCCAGG";
+        } else if(period.equals("Hourly")){
+            key = "https://min-api.cryptocompare.com/data/"+keyStart[2]+"?fsym="+tag+"&tsym=USD&limit=59&aggregate=3&e=CCCAGG";
+        }
+        Log.e("tag", "imhe"+key);
         return key;
     }
 }

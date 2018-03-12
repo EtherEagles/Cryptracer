@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antonio.cryptracer.Charts.Storjcoin_Chart_Day">
-    <com.github.mikephil.charting.charts.CandleStickChart
-        android:id="@+id/chart"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+    tools:context="com.example.antonio.cryptracer.Didactic_units.RippleDidactic">
+
+    <com.antonionicolaspina.revealtextview.RevealTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write something here"
+        app:rtv_duration="2000"
+        ></com.antonionicolaspina.revealtextview.RevealTextView>
+
 </android.support.constraint.ConstraintLayout>

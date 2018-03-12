@@ -35,7 +35,7 @@ public class MultichartSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multichart_selection);
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, coinList);
-        final ListView lv = findViewById(R.id.list);
+        final ListView lv = findViewById(R.id.multiSelList);
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         lv.setAdapter(adapter);
 
@@ -70,9 +70,14 @@ public class MultichartSelection extends AppCompatActivity {
     }
 
     public void loadMulti(View view){
+
         if(selected.size()>0) {
+            Bundle periodExtra = getIntent().getExtras();
+            String period = periodExtra.getString("loadPeriod");
+
             Intent intent = new Intent(this, Multichart.class);
             intent.putStringArrayListExtra("loadSelection", selected);
+            intent.putExtra("loadPeriod", period);
             startActivity(intent);
         } else{
             Toast.makeText(MultichartSelection.this, "Select a currency!", Toast.LENGTH_SHORT).show();

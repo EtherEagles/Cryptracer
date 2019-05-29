@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.antonio.cryptracer.Charts.Multichart">
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/lineChart"
+    <com.github.mikephil.charting.charts.CandleStickChart
+        android:id="@+id/candlechart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.LineChart>
+        app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.CandleStickChart>
 
 </android.support.constraint.ConstraintLayout>

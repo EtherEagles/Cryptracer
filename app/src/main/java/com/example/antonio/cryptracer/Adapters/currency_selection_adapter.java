@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.antonio.cryptracer.Currencies.Currency;
 import com.example.antonio.cryptracer.MultichartPeriod;
 import com.example.antonio.cryptracer.R;
 
@@ -19,14 +20,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class currency_selection_adapter extends RecyclerView.Adapter<currency_selection_adapter.ViewHolder>{
 
-    private ArrayList<String> mcurrency_names = new ArrayList<>();
-    private ArrayList<String> mcurrency_images = new ArrayList<>();
-    private Context mContext;
+    private ArrayList<String> coinNames = new ArrayList<>();
+    private ArrayList<String> coinImages = new ArrayList<>();
+    private Context context;
 
     public currency_selection_adapter(Context context, ArrayList<String> currency_names, ArrayList<String> currency_images){
-        mcurrency_names = currency_names;
-        mcurrency_images = currency_images;
-        mContext = context;
+        this.coinNames = currency_names;
+        this.coinImages = currency_images;
+        this.context = context;
     }
 
     @Override
@@ -38,51 +39,51 @@ public class currency_selection_adapter extends RecyclerView.Adapter<currency_se
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Glide.with(mContext)
+        Glide.with(context)
           .asBitmap()
-          .load(mcurrency_images.get(position))
+          .load(coinImages.get(position))
           .into(holder.currency);
-        holder.currency_name.setText(mcurrency_names.get(position));
+        holder.currency_name.setText(coinNames.get(position));
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(mContext, mcurrency_names.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, coinNames.get(position), Toast.LENGTH_SHORT).show();
 
-                Intent Bitcoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Bitcoin.class);
-                Intent Ether = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Ether.class);
-                Intent Litecoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Litecoin.class);
-                Intent Monero = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Monero.class);
-                Intent Ripple = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Ripple.class);
-                Intent Dogecoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Dogecoin.class);
-                Intent Dash = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Dash.class);
-                Intent MaidSafeCoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.MaidSafeCoin.class);
-                Intent Lisk = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Lisk.class);
-                Intent Storjcoin = new Intent(mContext, com.example.antonio.cryptracer.Currencies.Storjcoin.class);
-                Intent Multichart =  new Intent(mContext, MultichartPeriod.class);
+                Intent Currency = new Intent(context, com.example.antonio.cryptracer.Currencies.Currency.class);
 
-                if(mcurrency_names.get(position) == "Bitcoin"){
-                    mContext.startActivity(Bitcoin);
-                } if(mcurrency_names.get(position) == "Ether"){
-                    mContext.startActivity(Ether);
-                } if(mcurrency_names.get(position) == "Litecoin"){
-                    mContext.startActivity(Litecoin);
-                } if(mcurrency_names.get(position) == "Monero"){
-                    mContext.startActivity(Monero);
-                } if(mcurrency_names.get(position) == "Ripple"){
-                    mContext.startActivity(Ripple);
-                } if(mcurrency_names.get(position) == "Dogecoin"){
-                    mContext.startActivity(Dogecoin);
-                } if(mcurrency_names.get(position) == "Dash"){
-                    mContext.startActivity(Dash);
-                } if(mcurrency_names.get(position) == "MaidSafeCoin"){
-                    mContext.startActivity(MaidSafeCoin);
-                } if(mcurrency_names.get(position) == "Lisk"){
-                    mContext.startActivity(Lisk);
-                } if(mcurrency_names.get(position) == "Storjcoin"){
-                    mContext.startActivity(Storjcoin);
-                } if(mcurrency_names.get(position) == "Multichart"){
-                    mContext.startActivity(Multichart);
+                switch (coinNames.get(position)){
+                    case "Bitcoin":
+                        Currency.putExtra("coinName", "Bitcoin");
+                        context.startActivity(Currency);
+                        break;
+                    case "Ether":
+                        Currency.putExtra("coinName", "Ether");
+                        context.startActivity(Currency);
+                    case "Litecoin":
+                        Currency.putExtra("coinName", "Litecoin");
+                        context.startActivity(Currency);
+                    case "Monero":
+                        Currency.putExtra("coinName", "Monero");
+                        context.startActivity(Currency);
+                    case "Ripple":
+                        Currency.putExtra("coinName", "Ripple");
+                        context.startActivity(Currency);
+                    case "Dogecoin":
+                        Currency.putExtra("coinName", "Dogecoin");
+                        context.startActivity(Currency);
+                    case "Dash":
+                        Currency.putExtra("coinName", "Dash");
+                        context.startActivity(Currency);
+                    case "MaidSafeCoin":
+                        Currency.putExtra("coinName", "MaidSafeCoin");
+                        context.startActivity(Currency);
+                    case "Lisk":
+                        Currency.putExtra("coinName", "Lisk");
+                        context.startActivity(Currency);
+                    case "Storjcoin":
+                        Currency.putExtra("coinName", "Storjcoin");
+                        context.startActivity(Currency);
                 }
             }
         });
@@ -90,7 +91,7 @@ public class currency_selection_adapter extends RecyclerView.Adapter<currency_se
 
     @Override
     public int getItemCount() {
-        return mcurrency_names.size();
+        return coinNames.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

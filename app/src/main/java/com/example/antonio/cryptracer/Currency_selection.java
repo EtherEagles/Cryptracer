@@ -13,8 +13,8 @@ public class Currency_selection extends AppCompatActivity {
 
     private static final String TAG = "Currency_selection";
 
-    private ArrayList<String> mNames = new ArrayList<>();
-    private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<String> coinNames = new ArrayList<>();
+    private ArrayList<String> coinImages = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,38 +25,38 @@ public class Currency_selection extends AppCompatActivity {
 
     private void initImageBitmaps(){
 
-        mImageUrls.add("https://bitcoin.org/img/icons/opengraph.png");
-        mNames.add("Bitcoin");
+        coinImages.add("https://bitcoin.org/img/icons/opengraph.png");
+        coinNames.add("Bitcoin");
 
-        mImageUrls.add("http://neocashradio.com/wp-content/uploads/2016/11/ethereum-cryptocurrency-ether-ETH.png");
-        mNames.add("Ether");
+        coinImages.add("http://neocashradio.com/wp-content/uploads/2016/11/ethereum-cryptocurrency-ether-ETH.png");
+        coinNames.add("Ether");
 
-        mImageUrls.add("http://wpmedia.o.canada.com/2014/02/litecoin-logo.jpg?w=300");
-        mNames.add("Litecoin");
+        coinImages.add("http://wpmedia.o.canada.com/2014/02/litecoin-logo.jpg?w=300");
+        coinNames.add("Litecoin");
 
-        mImageUrls.add("https://ih0.redbubble.net/image.345329668.3028/sticker,375x360-bg,ffffff.u3.png");
-        mNames.add("Monero");
+        coinImages.add("https://ih0.redbubble.net/image.345329668.3028/sticker,375x360-bg,ffffff.u3.png");
+        coinNames.add("Monero");
 
-        mImageUrls.add("https://i.ebayimg.com/images/g/8EwAAOSwvD5aSL8v/s-l300.jpg");
-        mNames.add("Ripple");
+        coinImages.add("https://i.ebayimg.com/images/g/8EwAAOSwvD5aSL8v/s-l300.jpg");
+        coinNames.add("Ripple");
 
-        mImageUrls.add("https://pbs.twimg.com/profile_images/471272699713421312/HCd40Yan_400x400.png");
-        mNames.add("Dogecoin");
+        coinImages.add("https://pbs.twimg.com/profile_images/471272699713421312/HCd40Yan_400x400.png");
+        coinNames.add("Dogecoin");
 
-        mImageUrls.add("https://bittox.com/wp-content/uploads/2017/11/DASH-Keychain-5.png");
-        mNames.add("Dash");
+        coinImages.add("https://bittox.com/wp-content/uploads/2017/11/DASH-Keychain-5.png");
+        coinNames.add("Dash");
 
-        mImageUrls.add("https://pbs.twimg.com/profile_images/925701307561840641/8LzIcBXt_400x400.jpg");
-        mNames.add("MaidSafeCoin");
+        coinImages.add("https://pbs.twimg.com/profile_images/925701307561840641/8LzIcBXt_400x400.jpg");
+        coinNames.add("MaidSafeCoin");
 
-        mImageUrls.add("https://3mgj4y44nc15fnv8d303d8zb-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/lisk-696x449.jpg");
-        mNames.add("Lisk");
+        coinImages.add("https://3mgj4y44nc15fnv8d303d8zb-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/lisk-696x449.jpg");
+        coinNames.add("Lisk");
 
-        mImageUrls.add("https://pbs.twimg.com/profile_images/835199495013019648/cNeEcEDW.jpg");
-        mNames.add("Storjcoin");
+        coinImages.add("https://pbs.twimg.com/profile_images/835199495013019648/cNeEcEDW.jpg");
+        coinNames.add("Storjcoin");
 
-        mImageUrls.add("https://raw.githubusercontent.com/rcr095/rcr095/master/graph.png");
-        mNames.add("Multichart");
+        coinImages.add("https://raw.githubusercontent.com/rcr095/rcr095/master/graph.png");
+        coinNames.add("Multichart");
 
         initRecyclerView();
 
@@ -64,7 +64,7 @@ public class Currency_selection extends AppCompatActivity {
 
     private void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        currency_selection_adapter adapter = new currency_selection_adapter(this, mNames, mImageUrls);
+        currency_selection_adapter adapter = new currency_selection_adapter(this, coinNames, coinImages);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

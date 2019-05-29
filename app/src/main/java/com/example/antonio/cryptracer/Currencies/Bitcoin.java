@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.antonio.cryptracer.Adapters.Bitcoin_adapter;
-import com.example.antonio.cryptracer.Models.Model;
+import com.example.antonio.cryptracer.Models.Option;
 import com.example.antonio.cryptracer.R;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class Bitcoin extends AppCompatActivity {
     private RecyclerView bitcoinView;
     private RecyclerView.Adapter bitcoinAdapter;
 
-    private List<Model> listModels;
+    private List<Option> listOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +28,18 @@ public class Bitcoin extends AppCompatActivity {
         bitcoinView.setHasFixedSize(true);
         bitcoinView.setLayoutManager(new LinearLayoutManager(this));
 
-        listModels = new ArrayList<>();
+        listOptions = new ArrayList<>();
         String[] bitcoin_options = {"What is Bitcoin?", "Bitcoin current price", "Bitcoin last year chart", "Bitcoin last day chart", "Bitcoin last hour chart"};
         String[] bitcoin_descriptions = {"Get a taste of the most valuable cryptocurrency", "See current price for bitcoin", "Daily fluctuations for the last year", "Hourly fluctuations for the last day", "Fluctuations from every minute during the last hour"};
 
         for(int i = 0; i < bitcoin_options.length; i++){
-            Model model;
-            model = new Model(
+            Option option;
+            option = new Option(
                     bitcoin_options[i],
                     bitcoin_descriptions[i]
             );
-            listModels.add(model);
-            bitcoinAdapter = new Bitcoin_adapter(listModels, this);
+            listOptions.add(option);
+            bitcoinAdapter = new Bitcoin_adapter(listOptions, this);
             bitcoinView.setAdapter(bitcoinAdapter);
         }
     }

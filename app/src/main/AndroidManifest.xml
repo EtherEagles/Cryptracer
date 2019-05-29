@@ -31,10 +31,6 @@
         <activity android:name=".Currencies.Storjcoin" />
         <activity android:name=".Didactic_units.Bitcoin_didactic" />
         <activity android:name=".Price.Bitcoin_price" />
-        <activity android:name=".Charts.Bitcoin_Chart_Day" />
-        <activity android:name=".Charts.Bitcoin_Chart_Hour" />
-        <activity android:name=".Charts.Bitcoin_Chart_Minute" />
-        <activity android:name=".Charts.Storjcoin_Chart_Day" />
         <activity android:name=".Charts.Multichart" />
         <activity android:name=".Currencies.MultichartSelection" />
         <activity android:name=".Charts.StorjcoinChart" />
@@ -43,7 +39,12 @@
         <activity android:name=".MultichartPeriod" />
         <activity android:name=".Charts.RippleChart" />
         <activity android:name=".Didactic_units.RippleDidactic" />
-        <activity android:name=".Price.RipplePrice"></activity>
+        <activity android:name=".Price.RipplePrice" />
+        <activity android:name=".Currencies.Currency" />
+        <activity
+            android:name=".Didactic_units.Didactic"
+            android:label="@string/title_activity_didactic"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

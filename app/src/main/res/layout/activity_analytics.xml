@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antonio.cryptracer.Currencies.Currency">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/currency_view"
+    tools:context="com.example.antonio.cryptracer.Charts.Analytics">
+
+    <com.github.mikephil.charting.charts.CandleStickChart
+        android:id="@+id/candlechart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></com.github.mikephil.charting.charts.CandleStickChart>
 
 </android.support.constraint.ConstraintLayout>

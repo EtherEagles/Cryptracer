@@ -21,7 +21,6 @@ public class Intro extends AppCompatActivity {
         tv.startAnimation(intro);
         iv.startAnimation(intro);
         final Intent Currency_selection = new Intent(this, Currency_selection.class);
-        final Intent Bitcoin = new Intent(this, com.example.antonio.cryptracer.Currencies.Bitcoin.class);
         Thread timer = new Thread(){
             public void run () {
                 try {

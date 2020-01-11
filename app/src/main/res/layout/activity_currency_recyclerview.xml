@@ -4,6 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.antonio.cryptracer.Currencies.Litecoin">
+    tools:context="com.example.antonio.cryptracer.Currencies.Currency">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/currency_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>

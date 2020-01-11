@@ -4,4 +4,5 @@
     <string name="img_button">Click Logo to Load</string>
     <string name="title_activity_didactic">Didactic</string>
     <string name="explanation" />
+    <string name="title_activity_price">Price</string>
 </resources>

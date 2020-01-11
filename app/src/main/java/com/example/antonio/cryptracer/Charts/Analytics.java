@@ -26,7 +26,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class Multichart extends AppCompatActivity {
+public class Analytics extends AppCompatActivity {
 
     CandleStickChart candleStickChart;
     public int[] colorList = {Color.BLUE, Color.RED, Color.BLACK, Color.GREEN, Color.GRAY};
@@ -37,7 +37,7 @@ public class Multichart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multichart);
+        setContentView(R.layout.activity_analytics);
 
         Bundle extras = getIntent().getExtras();
         final String coinName = extras.getString("coinName");
@@ -57,7 +57,7 @@ public class Multichart extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Toast.makeText(Multichart.this, "Error Loading Data" +
+                Toast.makeText(Analytics.this, "Error Loading Data" +
                         e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
